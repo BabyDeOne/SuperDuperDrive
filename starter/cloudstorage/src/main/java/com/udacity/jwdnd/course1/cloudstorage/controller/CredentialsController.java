@@ -1,6 +1,7 @@
 package com.udacity.jwdnd.course1.cloudstorage.controller;
 
 import com.udacity.jwdnd.course1.cloudstorage.mapper.UserMapper;
+import com.udacity.jwdnd.course1.cloudstorage.model.Credentials;
 import com.udacity.jwdnd.course1.cloudstorage.model.User;
 import com.udacity.jwdnd.course1.cloudstorage.services.CredentialsService;
 import org.springframework.security.core.Authentication;
@@ -25,7 +26,7 @@ public class CredentialsController {
     @PostMapping
     public String handleAddUpdateCredentials(Authentication authentication, Credentials credentials){
         String loggedInUserName = (String) authentication.getPrincipal();
-        User user = userMapper.getUser(loggedInuserName);
+        User user = userMapper.getUser(loggedInUserName);
         Integer userId = user.getUserId();
 
         if(credentials.getCredentialId() != null){
