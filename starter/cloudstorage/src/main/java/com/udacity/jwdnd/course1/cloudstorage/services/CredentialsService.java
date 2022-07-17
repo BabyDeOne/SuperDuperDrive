@@ -31,10 +31,10 @@ public class CredentialsService {
 
         Credentials newCredentials = new Credentials();
         newCredentials.setUrl(credentials.getUrl());
-        newCredentials.setUserName(credentials.getUserName());
+        newCredentials.setUsername(credentials.getUsername());
         newCredentials.setKey(encodedKey);
         newCredentials.setPassword(encryptedPassword);
-        newCredentials.setUserId(userId);
+        newCredentials.setUserid(userId);
 
         credentialsMapper.insertCredentials(newCredentials);
     }
@@ -44,7 +44,7 @@ public class CredentialsService {
     }
 
     public void editCredentials(Credentials credentials){
-        Credentials storedCredential = credentialsMapper.getCredentialById(credentials.getCredentialId());
+        Credentials storedCredential = credentialsMapper.getCredentialById(credentials.getCredentialid());
 
         credentials.setKey(storedCredential.getKey());
         String encryptedPassword = encryptionService.encryptValue(credentials.getPassword(), credentials.getKey());

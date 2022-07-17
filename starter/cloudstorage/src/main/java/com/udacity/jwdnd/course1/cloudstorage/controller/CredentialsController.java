@@ -29,7 +29,7 @@ public class CredentialsController {
         User user = userMapper.getUser(loggedInUserName);
         Integer userId = user.getUserId();
 
-        if(credentials.getCredentialId() != null){
+        if(credentials.getCredentialid() != null){
             credentialsService.editCredentials(credentials);
         }else{
             credentialsService.addCredentials(credentials, userId);

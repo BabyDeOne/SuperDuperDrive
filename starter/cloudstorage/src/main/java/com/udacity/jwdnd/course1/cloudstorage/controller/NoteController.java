@@ -24,12 +24,12 @@ public class NoteController {
     }
 
     @PostMapping
-    public String handleAddupdateNote(Authentication authentication, Note note){
+    public String handleAddUpdateNote(Authentication authentication, Note note){
         String loggedInUserName = (String) authentication.getPrincipal();
         User user = userMapper.getUser(loggedInUserName);
         Integer userId = user.getUserId();
 
-        if(note.getNoteId() != null){
+        if(note.getNoteid() != null){
             noteService.updateNote(note);
         }else{
             noteService.addNote(note, userId);
@@ -39,9 +39,9 @@ public class NoteController {
     }
 
     @GetMapping("/delete")
-    public String deleteFile(@RequestParam("id") int noteId, RedirectAttributes redirectAttributes){
-        if(noteId > 0){
-            noteService.deleteNote(noteId);
+    public String deleteFile(@RequestParam("id") int noteid, RedirectAttributes redirectAttributes){
+        if(noteid > 0){
+            noteService.deleteNote(noteid);
             return "redirect:/result?success";
         }
 
