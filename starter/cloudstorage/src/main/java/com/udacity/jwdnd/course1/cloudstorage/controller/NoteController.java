@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-@Controller
 @RequestMapping("/home/notes")
+@Controller
+
 public class NoteController {
     private NoteService noteService;
     private UserMapper userMapper;

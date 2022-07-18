@@ -5,16 +5,16 @@ public class User {
     private String username;
     private String salt;
     private String password;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
 
     public User(Integer userId, String username, String salt, String password, String firstName, String lastName) {
         this.userId = userId;
         this.username = username;
         this.salt = salt;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
     }
 
     public Integer getUserId() {
@@ -50,18 +50,18 @@ public class User {
     }
 
     public String getFirstName() {
-        return firstName;
+        return firstname;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstname = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return lastname;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastname = lastName;
     }
 }
