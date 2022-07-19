@@ -2,57 +2,57 @@ package com.udacity.jwdnd.course1.cloudstorage.model;
 
 public class File {
     private Integer fileId;
-    private String fileName;
-    private String contentType;
-    private String fileSize;
-    private Integer userId;
-    private byte[] fileData;
+    private String filename;
+    private String contenttype;
+    private String filesize;
+    private Integer userid;
+    private byte[] filedata;
 
     public Integer getFileId() {
         return fileId;
     }
 
-    public void setFileId(Integer fileId) {
-        this.fileId = fileId;
+    public void setFileId(Integer fileid) {
+        this.fileId = fileid;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getFilename() {
+        return filename;
     }
 
-    public void setFileName(String filename) {
-        this.fileName = filename;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
-    public String getContentType() {
-        return contentType;
+    public String getContenttype() {
+        return contenttype;
     }
 
-    public void setContentType(String contentType) {
-        this.contentType = contentType;
+    public void setContenttype(String contenttype) {
+        this.contenttype = contenttype;
     }
 
-    public String getFileSize() {
-        return fileSize;
+    public String getFilesize() {
+        return filesize;
     }
 
-    public void setFileSize(String fileSize) {
-        this.fileSize = fileSize;
+    public void setFilesize(String filesize) {
+        this.filesize = filesize;
     }
 
     public Integer getUserId() {
-        return userId;
+        return userid;
     }
 
     public void setUserId(Integer userid) {
-        this.userId = userid;
+        this.userid = userid;
     }
 
-    public byte[] getFileData() {
-        return fileData;
+    public byte[] getFiledata() {
+        return filedata;
     }
 
-    public void setFileData(byte[] fileData) {
-        this.fileData = fileData;
+    public void setFiledata(byte[] filedata) {
+        this.filedata = filedata;
     }
 }

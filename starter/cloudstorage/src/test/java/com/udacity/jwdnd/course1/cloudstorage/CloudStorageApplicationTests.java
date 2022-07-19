@@ -474,11 +474,11 @@ class CloudStorageApplicationTests {
 
 		// Try to upload an arbitrary large file
 		WebDriverWait webDriverWait = new WebDriverWait(driver, 2);
-		String fileName = "upload5m.zip";
+		String filename = "upload5m.zip";
 
 		webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("fileUpload")));
 		WebElement fileSelectButton = driver.findElement(By.id("fileUpload"));
-		fileSelectButton.sendKeys(new File(fileName).getAbsolutePath());
+		fileSelectButton.sendKeys(new File(filename).getAbsolutePath());
 
 		WebElement uploadButton = driver.findElement(By.id("uploadButton"));
 		uploadButton.click();

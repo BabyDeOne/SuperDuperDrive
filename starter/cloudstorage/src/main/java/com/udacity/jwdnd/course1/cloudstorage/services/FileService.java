@@ -19,10 +19,10 @@ public class FileService {
     public void addFile(MultipartFile fileUpload, int userid) throws IOException{
         File file = new File();
         try{
-            file.setContentType(fileUpload.getContentType());
-            file.setFileData(fileUpload.getBytes());
-            file.setFileName(fileUpload.getOriginalFilename());
-            file.setFileSize(Long.toString(fileUpload.getSize()));
+            file.setContenttype(fileUpload.getContentType());
+            file.setFiledata(fileUpload.getBytes());
+            file.setFilename(fileUpload.getOriginalFilename());
+            file.setFilesize(Long.toString(fileUpload.getSize()));
             file.setUserId(userid);
         }catch(IOException e){
             throw e;
@@ -43,11 +43,11 @@ public class FileService {
         return true;
     }
 
-    public int deleteFile(int fileId){
-        return fileMapper.deleteFile(fileId);
+    public int deleteFile(int fileid){
+        return fileMapper.deleteFile(fileid);
     }
 
-    public File getFileById(Integer fileId){
-        return fileMapper.getFileById(fileId);
+    public File getFileById(Integer fileid){
+        return fileMapper.getFileById(fileid);
     }
 }

@@ -56,8 +56,24 @@ public class FileController {
     public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable Integer fileId){
         File file = fileService.getFileById(fileId);
         return ResponseEntity.ok()
-                .contentType(MediaType.parseMediaType(file.getContentType()))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+ file.getFileName() + "\"")
-                .body(new ByteArrayResource(file.getFileData()));
+                .contentType(MediaType.parseMediaType(file.getContenttype()))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+ file.getFilename() + "\"")
+                .body(new ByteArrayResource(file.getFiledata()));
+    }
+
+    @GetMapping("/delete")
+    public String deleteFile(@RequestParam("id") int fileid, Authentication authentication, RedirectAttributes redirectAttributes){
+        String loggedInUserName = (String) authentication.getPrincipal();
+        User user = userMapper.getUser(loggedInUserName);
+        String deleteError = null;
+
+        if(fileid > 0){
+            fileService.deleteFile(fileid);
+            return "redirect:/result?success";
+        }
+
+
+        redirectAttributes.addAttribute("error", "Unable to delete the file.");
+        return "redirect:/result?error";
     }
 }
